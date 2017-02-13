@@ -24,7 +24,8 @@ function DIC_sine_transform(img_name, lambda)
     maxi = maximum(e1)
     mini = minimum(e1)
     clamped = 1 +  (-e1 + maxi) * 1 / ( mini-maxi);
-    imwrite(grayim(clamped),"sineDICdan.png")
+    out_name = split(image_name,".")[1] * "_sin_l=$(@sprintf("%.2f", lambda))" * ".png"
+    imwrite(grayim(clamped),out_name)
     
     return clamped
     
