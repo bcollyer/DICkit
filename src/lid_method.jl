@@ -2,8 +2,6 @@ using PyPlot, Images
 using PyCall
 
 
-@pyimport numpy
-
 function trapz(a)
   return sum(a) - 0.5*a[1] - 0.5*a[end]
 end
@@ -27,7 +25,8 @@ function lid_method(img_name="../DICimages/DICmandrill.png")
   out_name = "../images/LID" * basename(img_name)[4:end]
   imwrite(grayim(clamped),out_name)
 
-  @printf("File outputted to" * out_name )
+
+  @printf("file outputted to /images/")
 
   return
 end
