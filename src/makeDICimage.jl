@@ -2,7 +2,7 @@ using PyPlot, Images
 using PyCall
 @pyimport numpy
 
-function makeDICimage(img_name="../images/mandrill.png",sigma = 0.01)
+function makeDICimage(img_name="../images/mandrill.png";sigma = 0.1)
 
 
   raw_img = PyPlot.imread(img_name);
